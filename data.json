@@ -18,7 +18,6 @@
           { "id": "enno-fussballtor-ball", "person": "Enno", "title": "Fußballtor mit Ball", "description": "Kinder-Fußballtor-Set für den Garten, inkl. Ball", "link": "", "price": "ca. 30–60 €" },
           { "id": "enno-tomate", "person": "Enno", "title": "Tomate soll kommen", "description": "Bedeutung noch unklar – Rückfrage bei Enno/Nina sinnvoll", "link": "", "price": "" },
           { "id": "enno-lego-wasserschutzpolizei", "person": "Enno", "title": "Lego Wasserschutzpolizei", "description": "LEGO-City-Set (60456) Verfolgungsjagd im Polizeiboot, mit Schlauchboot und Hai-Minifigur, 264 Teile, ab 6 Jahren", "link": "https://www.lego.com/de-de/product/police-boat-chase-60456", "price": "29,99 €" },
-          { "id": "enno-lego-feuerwehrstation", "person": "Enno", "title": "Lego Feuerwehrstation", "description": "Lego-City-Set „Feuerwehrstation“", "link": "", "price": "ca. 60–100 €" },
           { "id": "enno-polizei-kostuem", "person": "Enno", "title": "Polizei Kostüm mit Handschellen", "description": "Kinder-Polizeikostüm inkl. Spielzeug-Handschellen", "link": "", "price": "ca. 20–35 €" },
           { "id": "enno-rc-auto", "person": "Enno", "title": "Ferngesteuertes Auto", "description": "RC-Auto für Kinder", "link": "", "price": "ca. 30–60 €" },
           { "id": "enno-kugelbahn-magnet", "person": "Enno", "title": "Kugelbahn Teile für Magnetbausteine", "description": "Ergänzungsset mit Kugelbahn-Elementen (kompatibel z. B. mit Magna-Tiles/Magformers)", "link": "", "price": "ca. 20–40 €" },
@@ -28,7 +27,6 @@
           { "id": "enno-lego-lampe", "person": "Enno", "title": "„Lego“-Lampe", "description": "Lego-Themen-Nachttischlampe fürs Kinderzimmer", "link": "", "price": "ca. 20–40 €" },
           { "id": "enno-mini-ventilator", "person": "Enno", "title": "Mini Ventilator", "description": "Kleiner (USB-)Tischventilator fürs Kinderzimmer", "link": "", "price": "ca. 10–20 €" },
           { "id": "enno-mikroskop", "person": "Enno", "title": "Kinder Mikroskop", "description": "Einsteiger-Mikroskop für Kinder (Kandidaten: Bresser, Kosmos)", "link": "", "price": "ca. 25–50 €" },
-          { "id": "enno-fussballtor-klein", "person": "Enno", "title": "Kleines Fußballtor für draußen (Garten)", "description": "Kompaktes Fußballtor für den Garten", "link": "", "price": "ca. 20–40 €" },
           { "id": "enno-lego-thw", "person": "Enno", "title": "Lego THW", "description": "Kein offizielles LEGO-Set zum Thema THW verfügbar. Alternative: CustomBricks THW-Modelle (nur Bauanleitung, Steine separat via BrickLink nötig) – vor Kauf mit Sebastian abklären", "link": "https://www.custombricks.de/CUSTOM-Instructions/City-Minifigscale/City-THW-Models/?language=en", "price": "CustomBricks-Anleitungen ca. 5–10 €, Steine zusätzlich" },
           { "id": "enno-lego-sattelzug", "person": "Enno", "title": "Lego Sattelzug", "description": "LEGO-City-Set (60440) mit LKW, Auflieger, Gabelstapler und Hotdog-Stand, 4 Minifiguren, 1061 Teile, ab 8 Jahren", "link": "https://www.lego.com/de-de/product/yellow-delivery-truck-60440", "price": "99,99 €" },
 
