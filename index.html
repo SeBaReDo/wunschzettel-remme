@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wunschzettel Familie Remme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎁 Wunschzettel</h1>
+    <p class="subtitle">Für wen möchtest du etwas schenken?</p>
+
+    <div>
+      <div class="person-grid" id="person-select"></div>
+    </div>
+
+    <div id="wish-view" class="hidden">
+      <a class="back-link" id="back-link">← zurück zur Personenauswahl</a>
+      <h2 id="wish-person-title"></h2>
+      <div class="wish-list" id="wish-list"></div>
+      <p class="hint">Wunsch anklicken zum Reservieren. „Rückgängig“ hebt eine Reservierung wieder auf.</p>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
