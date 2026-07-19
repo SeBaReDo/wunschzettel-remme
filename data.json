@@ -16,7 +16,6 @@
 
           { "id": "enno-roller-bremse", "person": "Enno", "title": "Roller mit Bremse", "description": "Kinderroller mit Handbremse", "link": "", "price": "ca. 40–70 €" },
           { "id": "enno-fussballtor-ball", "person": "Enno", "title": "Fußballtor mit Ball", "description": "Kinder-Fußballtor-Set für den Garten, inkl. Ball", "link": "", "price": "ca. 30–60 €" },
-          { "id": "enno-tomate", "person": "Enno", "title": "Tomate soll kommen", "description": "Bedeutung noch unklar – Rückfrage bei Enno/Nina sinnvoll", "link": "", "price": "" },
           { "id": "enno-lego-wasserschutzpolizei", "person": "Enno", "title": "Lego Wasserschutzpolizei", "description": "LEGO-City-Set (60456) Verfolgungsjagd im Polizeiboot, mit Schlauchboot und Hai-Minifigur, 264 Teile, ab 6 Jahren", "link": "https://www.lego.com/de-de/product/police-boat-chase-60456", "price": "29,99 €" },
           { "id": "enno-polizei-kostuem", "person": "Enno", "title": "Polizei Kostüm mit Handschellen", "description": "Kinder-Polizeikostüm inkl. Spielzeug-Handschellen", "link": "", "price": "ca. 20–35 €" },
           { "id": "enno-rc-auto", "person": "Enno", "title": "Ferngesteuertes Auto", "description": "RC-Auto für Kinder", "link": "", "price": "ca. 30–60 €" },
@@ -28,7 +27,6 @@
           { "id": "enno-mini-ventilator", "person": "Enno", "title": "Mini Ventilator", "description": "Kleiner (USB-)Tischventilator fürs Kinderzimmer", "link": "", "price": "ca. 10–20 €" },
           { "id": "enno-mikroskop", "person": "Enno", "title": "Kinder Mikroskop", "description": "Einsteiger-Mikroskop für Kinder (Kandidaten: Bresser, Kosmos)", "link": "", "price": "ca. 25–50 €" },
           { "id": "enno-lego-thw", "person": "Enno", "title": "Lego THW", "description": "Kein offizielles LEGO-Set zum Thema THW verfügbar. Alternative: CustomBricks THW-Modelle (nur Bauanleitung, Steine separat via BrickLink nötig) – vor Kauf mit Sebastian abklären", "link": "https://www.custombricks.de/CUSTOM-Instructions/City-Minifigscale/City-THW-Models/?language=en", "price": "CustomBricks-Anleitungen ca. 5–10 €, Steine zusätzlich" },
-          { "id": "enno-lego-sattelzug", "person": "Enno", "title": "Lego Sattelzug", "description": "LEGO-City-Set (60440) mit LKW, Auflieger, Gabelstapler und Hotdog-Stand, 4 Minifiguren, 1061 Teile, ab 8 Jahren", "link": "https://www.lego.com/de-de/product/yellow-delivery-truck-60440", "price": "99,99 €" },
 
           { "id": "basti-airpods-pro-3", "person": "Basti", "title": "AirPods Pro 3 (neuestes Modell)", "description": "Aktuelles In-Ear-Modell (Sept. 2025), aktive Geräuschunterdrückung, Herzfrequenzmessung, Live-Übersetzung, USB-C-Ladecase", "link": "https://www.apple.com/de/shop/buy-airpods/airpods-pro-3", "price": "249 € (UVP), Preisvergleich teils ab ca. 187 €" },
           { "id": "basti-kino-gutschein-uci-bochum", "person": "Basti", "title": "Kino-Gutschein UCI Bochum", "description": "Geschenkgutschein/-karte für UCI-Kinos, einlösbar für Tickets & Snacks in allen UCI-Kinos Deutschlands (inkl. UCI Bochum)", "link": "https://www.uci-kinowelt.de/shop", "price": "frei wählbarer Betrag" },
