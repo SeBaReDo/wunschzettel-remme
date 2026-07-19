@@ -19,6 +19,9 @@ const wishView = document.getElementById("wish-view");
 const wishList = document.getElementById("wish-list");
 const wishPersonTitle = document.getElementById("wish-person-title");
 const backLink = document.getElementById("back-link");
+const subtitle = document.getElementById("subtitle");
+const infoBanner = document.getElementById("info-banner");
+const infoBannerClose = document.getElementById("info-banner-close");
 
 let allWishes = [];
 let reservations = {}; // id -> true/false
@@ -46,6 +49,7 @@ function showPerson(person) {
   currentPerson = person;
   wishPersonTitle.textContent = `Wünsche von ${person}`;
   personSelect.parentElement.classList.add("hidden");
+  subtitle.classList.add("hidden");
   wishView.classList.remove("hidden");
   renderWishes();
 }
@@ -53,6 +57,7 @@ function showPerson(person) {
 function showPersonSelect() {
   currentPerson = null;
   wishView.classList.add("hidden");
+  subtitle.classList.remove("hidden");
   personSelect.parentElement.classList.remove("hidden");
 }
 
@@ -121,6 +126,11 @@ function renderWishes() {
     card.appendChild(meta);
 
     if (!isReserved) {
+      const tapHint = document.createElement("span");
+      tapHint.className = "tap-hint";
+      tapHint.textContent = "Tippen zum Reservieren →";
+      card.appendChild(tapHint);
+
       card.addEventListener("click", () => reserve(wish.id));
     }
 
@@ -152,6 +162,10 @@ function listenToReservations() {
 }
 
 backLink.addEventListener("click", showPersonSelect);
+
+infoBannerClose.addEventListener("click", () => {
+  infoBanner.classList.add("hidden");
+});
 
 loadData();
 listenToReservations();

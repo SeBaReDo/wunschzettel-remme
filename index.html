@@ -8,18 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>🎁 Wunschzettel</h1>
-    <p class="subtitle">Für wen möchtest du etwas schenken?</p>
+    <h1>🎁 Wunschzettel – Familie Remme</h1>
+    <p class="subtitle" id="subtitle">Für wen möchtest du etwas schenken?</p>
 
     <div>
       <div class="person-grid" id="person-select"></div>
     </div>
 
     <div id="wish-view" class="hidden">
-      <a class="back-link" id="back-link">← zurück zur Personenauswahl</a>
+      <button class="back-link" id="back-link">‹ Zurück</button>
       <h2 id="wish-person-title"></h2>
+
+      <div class="info-banner" id="info-banner">
+        <span class="info-banner-icon">i</span>
+        <span class="info-banner-text">Tippe auf einen Wunsch, um ihn zu reservieren. „Rückgängig“ hebt die Reservierung wieder auf.</span>
+        <button class="info-banner-close" id="info-banner-close" aria-label="Hinweis schließen">✕</button>
+      </div>
+
       <div class="wish-list" id="wish-list"></div>
-      <p class="hint">Wunsch anklicken zum Reservieren. „Rückgängig“ hebt eine Reservierung wieder auf.</p>
     </div>
   </div>
 
