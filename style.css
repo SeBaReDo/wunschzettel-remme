@@ -81,6 +81,11 @@ h1 {
   cursor: default;
 }
 
+.wish-card.reserved .wish-title,
+.wish-card.reserved .wish-desc {
+  color: #aaa396;
+}
+
 .wish-title {
   font-weight: 600;
   font-size: 1.05rem;
