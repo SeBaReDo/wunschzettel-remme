@@ -120,10 +120,27 @@ function renderWishes() {
     const meta = document.createElement("div");
     meta.className = "wish-meta";
 
+    const metaLeft = document.createElement("div");
+    metaLeft.className = "wish-meta-left";
+    const metaRight = document.createElement("div");
+    metaRight.className = "wish-meta-right";
+
     if (wish.price) {
-      const price = document.createElement("span");
-      price.textContent = wish.price;
-      meta.appendChild(price);
+      if (wish.link) {
+        const priceBtn = document.createElement("a");
+        priceBtn.href = wish.link;
+        priceBtn.target = "_blank";
+        priceBtn.rel = "noopener noreferrer";
+        priceBtn.className = "pill-btn price-btn";
+        priceBtn.textContent = wish.price;
+        priceBtn.addEventListener("click", (e) => e.stopPropagation());
+        metaLeft.appendChild(priceBtn);
+      } else {
+        const priceSpan = document.createElement("span");
+        priceSpan.className = "pill-btn price-btn price-btn-static";
+        priceSpan.textContent = wish.price;
+        metaLeft.appendChild(priceSpan);
+      }
     }
 
     if (wish.link) {
@@ -131,16 +148,20 @@ function renderWishes() {
       link.href = wish.link;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+      link.className = "pill-btn link-btn";
       link.textContent = "Zum Produkt";
       link.addEventListener("click", (e) => e.stopPropagation());
-      meta.appendChild(link);
+      metaRight.appendChild(link);
     }
+
+    meta.appendChild(metaLeft);
+    meta.appendChild(metaRight);
 
     if (isReserved) {
       const badge = document.createElement("span");
       badge.className = "reserved-badge";
       badge.textContent = "Reserviert";
-      meta.appendChild(badge);
+      metaRight.appendChild(badge);
 
       const undoBtn = document.createElement("button");
       undoBtn.className = "undo-btn";
@@ -149,7 +170,7 @@ function renderWishes() {
         e.stopPropagation();
         unreserve(wish.id);
       });
-      meta.appendChild(undoBtn);
+      metaRight.appendChild(undoBtn);
     }
 
     card.appendChild(meta);
