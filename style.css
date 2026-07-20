@@ -47,6 +47,28 @@ body {
 .hero {
   text-align: center;
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero.hero--compact h1 {
+  order: -1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #6f9b7d;
+  margin: 0 0 2px;
+}
+
+.hero.hero--compact .hero-gift {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 0;
+}
+
+.hero.hero--compact .gift-emoji {
+  font-size: 2.5rem;
 }
 
 .hero-gift {
@@ -154,24 +176,47 @@ h1 {
   height: 20px;
 }
 
-.wish-view-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 20px;
+#wish-view {
+  position: relative;
 }
 
-.wish-view-header h2 {
-  margin: 0;
-  font-size: 1.4rem;
+.back-link-float {
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+.back-link-float svg {
+  width: 16px;
+  height: 16px;
+}
+
+.person-heading {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 800;
   color: #202436;
+  margin: 4px 0 8px;
+}
+
+.person-heading .heart {
+  font-size: 0.85em;
+  margin-left: 4px;
+}
+
+.person-subtitle {
+  text-align: center;
+  color: #7c7669;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 28px;
+  padding: 0 40px;
 }
 
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   flex-shrink: 0;
   color: #007aff;
   text-decoration: none;
@@ -261,9 +306,13 @@ h1 {
 .wish-card {
   background: #fff;
   border: 1px solid #e4e0d8;
-  border-radius: 12px;
-  padding: 16px 18px;
+  border-radius: 14px;
+  padding: 16px 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   transition: opacity .15s ease, box-shadow .15s ease, transform .1s ease;
 }
 
@@ -276,30 +325,13 @@ h1 {
   transform: translateY(0) scale(0.99);
 }
 
-.wish-card:not(.reserved) .tap-hint {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #007aff;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity .15s ease, transform .15s ease;
-}
-
-.wish-card:not(.reserved):hover .tap-hint {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .wish-card.reserved {
-  background: #f1efe9;
   cursor: default;
 }
 
-.wish-card.reserved .wish-title,
-.wish-card.reserved .wish-desc {
-  color: #aaa396;
+.wish-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .wish-title {
@@ -314,23 +346,31 @@ h1 {
   margin-bottom: 6px;
 }
 
-.wish-meta {
-  font-size: 0.85rem;
-  color: #777;
-  display: flex;
-  justify-content: space-between;
+.price-chip {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 12px;
+  gap: 6px;
+  background: #eef3f1;
+  color: #1c2333;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 6px;
 }
 
-.wish-meta-left,
-.wish-meta-right {
+.price-chip svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.wish-action {
+  flex-shrink: 0;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 
 .pill-btn {
@@ -375,38 +415,67 @@ h1 {
   background: #5c8568;
 }
 
-.price-btn.price-btn-static {
-  cursor: default;
+.reserve-icon {
+  font-size: 0.95em;
 }
 
-.price-btn.price-btn-static:hover {
-  background: #eef3f1;
-  transform: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+.reserved-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eaf6ef;
+  border-radius: 14px;
+  padding: 10px 16px;
 }
 
-.reserved-badge {
-  display: inline-block;
-  background: #d9d3c2;
-  color: #5a5238;
-  border-radius: 999px;
-  padding: 2px 10px;
-  font-size: 0.8rem;
-  font-weight: 600;
+.reserved-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4f9d6e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reserved-check svg {
+  width: 15px;
+  height: 15px;
+}
+
+.reserved-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.reserved-label {
+  color: #2f7a4f;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.reserved-sub {
+  color: #5c8568;
+  font-size: 0.78rem;
 }
 
 .undo-btn {
-  margin-left: auto;
   background: none;
-  border: 1px solid #b7ada4;
-  border-radius: 8px;
-  padding: 4px 10px;
-  font-size: 0.8rem;
+  border: none;
+  color: #9aa79f;
+  font-size: 0.78rem;
   cursor: pointer;
-  color: #5a5238;
+  text-decoration: underline;
+  padding: 0;
+  align-self: flex-end;
 }
 
-.undo-btn:hover { background: #e9e4d8; }
+.undo-btn:hover {
+  color: #5a5238;
+}
 
 .hint {
   font-size: 0.85rem;
@@ -416,3 +485,18 @@ h1 {
 }
 
 .hidden { display: none; }
+
+@media (max-width: 560px) {
+  .wish-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wish-action {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
