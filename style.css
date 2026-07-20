@@ -183,7 +183,7 @@ h1 {
 .back-link-float {
   position: absolute;
   top: 2px;
-  right: 0;
+  left: 0;
 }
 
 .back-link-float svg {
@@ -310,9 +310,8 @@ h1 {
   padding: 16px 20px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  gap: 10px;
   transition: opacity .15s ease, box-shadow .15s ease, transform .1s ease;
 }
 
@@ -329,6 +328,20 @@ h1 {
   cursor: default;
 }
 
+.wish-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wish-card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .wish-info {
   flex: 1;
   min-width: 0;
@@ -343,10 +356,9 @@ h1 {
 .wish-desc {
   font-size: 0.9rem;
   color: #555;
-  margin-bottom: 6px;
 }
 
-.price-chip {
+.pill-sm {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -356,21 +368,29 @@ h1 {
   padding: 6px 14px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-top: 6px;
+  font-family: inherit;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
 }
 
-.price-chip svg {
+.pill-sm svg {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
 }
 
+a.pill-sm {
+  cursor: pointer;
+  transition: background .15s ease;
+}
+
+a.pill-sm:hover {
+  background: #e1e9e4;
+}
+
 .wish-action {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
 }
 
 .pill-btn {
@@ -409,6 +429,7 @@ h1 {
 .reserve-btn {
   background: #6f9b7d;
   color: #fff;
+  flex-shrink: 0;
 }
 
 .reserve-btn:hover {
@@ -417,6 +438,14 @@ h1 {
 
 .reserve-icon {
   font-size: 0.95em;
+}
+
+.reserved-wrap {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .reserved-box {
@@ -470,7 +499,6 @@ h1 {
   cursor: pointer;
   text-decoration: underline;
   padding: 0;
-  align-self: flex-end;
 }
 
 .undo-btn:hover {
@@ -487,16 +515,7 @@ h1 {
 .hidden { display: none; }
 
 @media (max-width: 560px) {
-  .wish-card {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .wish-action {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+  .wish-card-top {
     flex-wrap: wrap;
   }
 }
