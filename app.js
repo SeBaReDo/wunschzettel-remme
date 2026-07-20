@@ -143,17 +143,6 @@ function renderWishes() {
       }
     }
 
-    if (!isReserved) {
-      const reserveBtn = document.createElement("button");
-      reserveBtn.className = "pill-btn reserve-btn";
-      reserveBtn.textContent = "Wunsch reservieren";
-      reserveBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        reserve(wish.id);
-      });
-      metaRight.appendChild(reserveBtn);
-    }
-
     if (wish.link) {
       const link = document.createElement("a");
       link.href = wish.link;
@@ -163,6 +152,17 @@ function renderWishes() {
       link.innerHTML = 'Zum Produkt <span class="pill-arrow">→</span>';
       link.addEventListener("click", (e) => e.stopPropagation());
       metaRight.appendChild(link);
+    }
+
+    if (!isReserved) {
+      const reserveBtn = document.createElement("button");
+      reserveBtn.className = "pill-btn reserve-btn";
+      reserveBtn.textContent = "Wunsch reservieren";
+      reserveBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        reserve(wish.id);
+      });
+      metaRight.appendChild(reserveBtn);
     }
 
     meta.appendChild(metaLeft);
