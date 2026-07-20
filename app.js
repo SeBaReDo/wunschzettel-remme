@@ -34,12 +34,41 @@ async function loadData() {
   renderPersonGrid(data.people);
 }
 
+const PERSON_STYLES = {
+  Elisa: {
+    bg: "#dcebd9",
+    color: "#4f7d5c",
+    icon: '<path d="M12 3c-2 0-3.5 1.5-3.5 3.5S10 10 12 10s3.5-1.5 3.5-3.5S14 3 12 3Z"/><path d="M12 10v11"/><path d="M12 15c-2 0-4 1-4 3"/><path d="M12 15c2 0 4 1 4 3"/>'
+  },
+  Enno: {
+    bg: "#dde6f5",
+    color: "#3f6bab",
+    icon: '<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10v4M5 12h4"/><circle cx="16" cy="10.5" r="1"/><circle cx="18.3" cy="13" r="1"/>'
+  },
+  Basti: {
+    bg: "#f5e6cc",
+    color: "#c9822f",
+    icon: '<path d="M3 14c0-1 1-2 3-2h12c2 0 3 1 3 2"/><path d="M2 14h20"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/>'
+  },
+  Nina: {
+    bg: "#f6dde4",
+    color: "#c85770",
+    icon: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/>'
+  }
+};
+
 function renderPersonGrid(people) {
   personSelect.innerHTML = "";
   people.forEach((person) => {
+    const style = PERSON_STYLES[person] || { bg: "#eee", color: "#666", icon: "" };
     const card = document.createElement("div");
     card.className = "person-card";
-    card.textContent = person;
+    card.innerHTML =
+      '<span class="person-icon" style="background:' + style.bg + '; color:' + style.color + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + style.icon + '</svg>' +
+      '</span>' +
+      '<span class="person-name">' + person + '</span>' +
+      '<svg class="person-chevron" viewBox="0 0 24 24" fill="none" stroke="' + style.color + '" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
     card.addEventListener("click", () => showPerson(person));
     personSelect.appendChild(card);
   });
