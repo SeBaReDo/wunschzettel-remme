@@ -1,5 +1,56 @@
 <!DOCTYPE html>
+<html lang="de"><!DOCTYPE html>
 <html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wunschzettel Familie Remme</title>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <div class="bg-blob bg-blob-top"></div>
+  <div class="bg-blob bg-blob-bottom"></div>
+
+  <div class="container">
+    <div class="hero" id="hero">
+      <div class="hero-gift">
+        <span class="confetti c1"></span>
+        <span class="confetti c2"></span>
+        <span class="confetti c3"></span>
+        <span class="confetti c4"></span>
+        <span class="gift-emoji">🎁</span>
+      </div>
+      <h1>Wunschzettel – Familie Remme</h1>
+      <p class="subtitle" id="subtitle">Für wen möchtest du etwas schenken?</p>
+    </div>
+
+    <div>
+      <div class="person-grid" id="person-select"></div>
+    </div>
+
+    <div id="wish-view" class="hidden">
+      <button class="back-link" id="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Zurück
+      </button>
+
+      <h2 id="wish-person-title" class="person-heading"></h2>
+      <p class="person-subtitle" id="wish-person-subtitle"></p>
+
+      <div class="info-banner" id="info-banner">
+        <span class="info-banner-icon">i</span>
+        <span class="info-banner-text">Tippe auf einen Wunsch, um ihn zu reservieren. „Rückgängig“ hebt die Reservierung wieder auf.</span>
+        <button class="info-banner-close" id="info-banner-close" aria-label="Hinweis schließen">✕</button>
+      </div>
+
+      <div class="wish-list" id="wish-list"></div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
