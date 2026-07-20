@@ -329,33 +329,50 @@ h1 {
 .wish-meta-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .pill-btn {
   display: inline-flex;
   align-items: center;
-  background: #d9f2e6;
-  color: #16805a;
+  gap: 6px;
+  background: #eef3f1;
+  color: #1c2333;
   border: none;
   border-radius: 999px;
-  padding: 6px 14px;
-  font-size: 0.85rem;
+  padding: 10px 20px;
+  font-size: 0.95rem;
   font-weight: 600;
   font-family: inherit;
   text-decoration: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: background .15s ease, transform .1s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
   cursor: pointer;
 }
 
 .pill-btn:hover {
-  background: #c3ecdb;
+  background: #e1e9e4;
   transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .pill-btn:active {
   transform: translateY(0) scale(0.97);
+}
+
+.pill-arrow {
+  font-size: 0.9em;
+}
+
+.reserve-btn {
+  background: #34b774;
+  color: #fff;
+}
+
+.reserve-btn:hover {
+  background: #2ba566;
 }
 
 .price-btn.price-btn-static {
@@ -363,8 +380,9 @@ h1 {
 }
 
 .price-btn.price-btn-static:hover {
-  background: #d9f2e6;
+  background: #eef3f1;
   transform: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .reserved-badge {
