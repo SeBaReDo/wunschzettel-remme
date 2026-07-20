@@ -11,7 +11,7 @@
   <div class="bg-blob bg-blob-bottom"></div>
 
   <div class="container">
-    <div class="hero">
+    <div class="hero" id="hero">
       <div class="hero-gift">
         <span class="confetti c1"></span>
         <span class="confetti c2"></span>
@@ -28,10 +28,13 @@
     </div>
 
     <div id="wish-view" class="hidden">
-      <div class="wish-view-header">
-        <h2 id="wish-person-title"></h2>
-        <button class="back-link" id="back-link">‹ Zurück</button>
-      </div>
+      <button class="back-link back-link-float" id="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        Zurück
+      </button>
+
+      <h2 id="wish-person-title" class="person-heading"></h2>
+      <p class="person-subtitle" id="wish-person-subtitle"></p>
 
       <div class="info-banner" id="info-banner">
         <span class="info-banner-icon">i</span>
