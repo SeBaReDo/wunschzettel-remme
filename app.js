@@ -18,8 +18,10 @@ const personSelect = document.getElementById("person-select");
 const wishView = document.getElementById("wish-view");
 const wishList = document.getElementById("wish-list");
 const wishPersonTitle = document.getElementById("wish-person-title");
+const wishPersonSubtitle = document.getElementById("wish-person-subtitle");
 const backLink = document.getElementById("back-link");
 const subtitle = document.getElementById("subtitle");
+const hero = document.getElementById("hero");
 const infoBanner = document.getElementById("info-banner");
 const infoBannerClose = document.getElementById("info-banner-close");
 
@@ -76,7 +78,9 @@ function renderPersonGrid(people) {
 
 function showPerson(person) {
   currentPerson = person;
-  wishPersonTitle.textContent = `Wünsche von ${person}`;
+  wishPersonTitle.innerHTML = `${person}s Wunschzettel <span class="heart">🧡</span>`;
+  wishPersonSubtitle.textContent = `Hier findest du ${person}s aktuelle Wünsche. Reserviere einen Wunsch, damit es keine doppelten Geschenke gibt.`;
+  hero.classList.add("hero--compact");
   personSelect.parentElement.classList.add("hidden");
   subtitle.classList.add("hidden");
   wishView.classList.remove("hidden");
@@ -86,6 +90,7 @@ function showPerson(person) {
 function showPersonSelect() {
   currentPerson = null;
   wishView.classList.add("hidden");
+  hero.classList.remove("hero--compact");
   subtitle.classList.remove("hidden");
   personSelect.parentElement.classList.remove("hidden");
 }
@@ -105,74 +110,43 @@ function renderWishes() {
     const card = document.createElement("div");
     card.className = "wish-card" + (isReserved ? " reserved" : "");
 
+    const info = document.createElement("div");
+    info.className = "wish-info";
+
     const title = document.createElement("div");
     title.className = "wish-title";
     title.textContent = wish.title;
-    card.appendChild(title);
+    info.appendChild(title);
 
     if (wish.description) {
       const desc = document.createElement("div");
       desc.className = "wish-desc";
       desc.textContent = wish.description;
-      card.appendChild(desc);
+      info.appendChild(desc);
     }
-
-    const meta = document.createElement("div");
-    meta.className = "wish-meta";
-
-    const metaLeft = document.createElement("div");
-    metaLeft.className = "wish-meta-left";
-    const metaRight = document.createElement("div");
-    metaRight.className = "wish-meta-right";
 
     if (wish.price) {
-      if (wish.link) {
-        const priceBtn = document.createElement("a");
-        priceBtn.href = wish.link;
-        priceBtn.target = "_blank";
-        priceBtn.rel = "noopener noreferrer";
-        priceBtn.className = "pill-btn price-btn";
-        priceBtn.textContent = wish.price;
-        priceBtn.addEventListener("click", (e) => e.stopPropagation());
-        metaLeft.appendChild(priceBtn);
-      } else {
-        const priceSpan = document.createElement("span");
-        priceSpan.className = "pill-btn price-btn price-btn-static";
-        priceSpan.textContent = wish.price;
-        metaLeft.appendChild(priceSpan);
-      }
+      const priceChip = document.createElement("span");
+      priceChip.className = "price-chip";
+      priceChip.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.59 3.24L4 3a1 1 0 0 0-1 1l.24 5.59a2 2 0 0 0 .59 1.41l9.58 9.58a2 2 0 0 0 2.83 0l5.66-5.66a2 2 0 0 0 0-2.83Z"/><circle cx="7.5" cy="7.5" r="1.25" fill="currentColor" stroke="none"/></svg><span>' +
+        wish.price +
+        "</span>";
+      info.appendChild(priceChip);
     }
 
-    if (wish.link) {
-      const link = document.createElement("a");
-      link.href = wish.link;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.className = "pill-btn link-btn";
-      link.innerHTML = 'zum Produkt <span class="pill-arrow">→</span>';
-      link.addEventListener("click", (e) => e.stopPropagation());
-      metaRight.appendChild(link);
-    }
+    card.appendChild(info);
 
-    if (!isReserved) {
-      const reserveBtn = document.createElement("button");
-      reserveBtn.className = "pill-btn reserve-btn";
-      reserveBtn.textContent = "Wunsch reservieren";
-      reserveBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        reserve(wish.id);
-      });
-      metaRight.appendChild(reserveBtn);
-    }
-
-    meta.appendChild(metaLeft);
-    meta.appendChild(metaRight);
+    const action = document.createElement("div");
+    action.className = "wish-action";
 
     if (isReserved) {
-      const badge = document.createElement("span");
-      badge.className = "reserved-badge";
-      badge.textContent = "Reserviert";
-      metaRight.appendChild(badge);
+      const box = document.createElement("div");
+      box.className = "reserved-box";
+      box.innerHTML =
+        '<span class="reserved-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>' +
+        '<span class="reserved-text"><span class="reserved-label">Reserviert</span><span class="reserved-sub">Vielen Dank!</span></span>';
+      action.appendChild(box);
 
       const undoBtn = document.createElement("button");
       undoBtn.className = "undo-btn";
@@ -181,10 +155,30 @@ function renderWishes() {
         e.stopPropagation();
         unreserve(wish.id);
       });
-      metaRight.appendChild(undoBtn);
+      action.appendChild(undoBtn);
+    } else {
+      if (wish.link) {
+        const link = document.createElement("a");
+        link.href = wish.link;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.className = "pill-btn link-btn";
+        link.innerHTML = 'zum Produkt <span class="pill-arrow">→</span>';
+        link.addEventListener("click", (e) => e.stopPropagation());
+        action.appendChild(link);
+      }
+
+      const reserveBtn = document.createElement("button");
+      reserveBtn.className = "pill-btn reserve-btn";
+      reserveBtn.innerHTML = '<span class="reserve-icon">🎁</span> Wunsch reservieren';
+      reserveBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        reserve(wish.id);
+      });
+      action.appendChild(reserveBtn);
     }
 
-    card.appendChild(meta);
+    card.appendChild(action);
 
     if (!isReserved) {
       card.addEventListener("click", () => reserve(wish.id));
