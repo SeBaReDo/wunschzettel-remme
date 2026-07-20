@@ -149,7 +149,7 @@ function renderWishes() {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       link.className = "pill-btn link-btn";
-      link.innerHTML = 'Zum Produkt <span class="pill-arrow">→</span>';
+      link.innerHTML = 'zum Produkt <span class="pill-arrow">→</span>';
       link.addEventListener("click", (e) => e.stopPropagation());
       metaRight.appendChild(link);
     }
