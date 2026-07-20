@@ -394,120 +394,36 @@ a.pill-sm:hover {
   background: #e1e9e4;
 }
 
-.wish-action {
-  flex-shrink: 0;
-}
-
-.pill-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #eef3f1;
-  color: #1c2333;
-  border: none;
-  border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-family: inherit;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
+button.pill-sm {
   cursor: pointer;
 }
 
-.pill-btn:hover {
-  background: #e1e9e4;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.pill-btn:active {
-  transform: translateY(0) scale(0.97);
-}
-
-.pill-arrow {
-  font-size: 0.9em;
+.wish-action {
+  flex-shrink: 0;
 }
 
 .reserve-btn {
   background: #6f9b7d;
   color: #fff;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .reserve-btn:hover {
-  background: #5c8568;
+  background: #6f9b7d;
 }
 
 .reserve-icon {
   font-size: 0.95em;
 }
 
-.reserved-wrap {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-.reserved-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.reserve-btn.reserved-state {
   background: #eaf6ef;
-  border-radius: 14px;
-  padding: 10px 16px;
-}
-
-.reserved-check {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #4f9d6e;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reserved-check svg {
-  width: 15px;
-  height: 15px;
-}
-
-.reserved-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.reserved-label {
   color: #2f7a4f;
-  font-weight: 700;
-  font-size: 0.92rem;
 }
 
-.reserved-sub {
-  color: #5c8568;
-  font-size: 0.78rem;
-}
-
-.undo-btn {
-  background: none;
-  border: none;
-  color: #9aa79f;
-  font-size: 0.78rem;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-}
-
-.undo-btn:hover {
-  color: #5a5238;
+.reserve-btn.reserved-state:hover {
+  background: #eaf6ef;
 }
 
 .hint {
