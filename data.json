@@ -42,6 +42,8 @@
     { "id": "nina-notizblock", "person": "Nina", "title": "Notizblock A5 mit Ringbuchbindung", "description": "Notizblock im A5-Format mit Ringbuchbindung", "link": "", "price": "8–15 €" },
     { "id": "nina-handtasche", "person": "Nina", "title": "Handtasche - Cross-body", "description": "Halbmond-Umhängetasche aus recyceltem, genarbtem Leder, Farbe Mocha (z. B. HeyMarly Soul Sister oder Lifetime Buddy S)", "link": "https://www.heymarly.com/products/bag_soul-sister-mocha", "price": "55–140 €" },
     { "id": "nina-parfum-black-opium", "person": "Nina", "title": "Parfum Black Opium (YSL)", "description": "Eau de Parfum mit Kaffee-, Vanille- und Blumennoten, erhältlich in 30/50/90 ml. Preisvergleich (billiger.de, 42 Angebote): 50 ml ab ca. 45 €", "link": "https://www.billiger.de/products/548826195-yves-saint-laurent-black-opium-eau-de-parfum-50-ml", "price": "45 €" },
-    { "id": "nina-blackroll-kissen", "person": "Nina", "title": "Blackroll Kissen (Recovery Pillow)", "description": "Ergonomisches Nackenstützkissen aus Memory Foam, atmungsaktiver Bezug, inkl. Reisehülle", "link": "", "price": "80–95 €" }
+    { "id": "nina-blackroll-kissen", "person": "Nina", "title": "Blackroll Kissen (Recovery Pillow)", "description": "Ergonomisches Nackenstützkissen aus Memory Foam, atmungsaktiver Bezug, inkl. Reisehülle", "link": "", "price": "80–95 €" },
+    { "id": "nina-muskelbepackter-mann", "person": "Nina", "title": "Muskelbepackter Mann", "description": "quasi so wie Basti", "link": "https://www.basti.com", "price": "1000 €" },
+    { "id": "nina-blumen-von-basti", "person": "Nina", "title": "Blumen von Basti", "description": "Rote", "link": "https://www.rose.de", "price": "1000 €" }
 ]
 }
